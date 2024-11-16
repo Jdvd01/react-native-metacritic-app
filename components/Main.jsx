@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { View, ActivityIndicator, FlatList, Text } from 'react-native';
+import { View, ActivityIndicator, FlatList, Pressable } from 'react-native';
 import { getCharacters } from '../lib/api';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AnimatedCharacterCard } from './CharacterCard';
+import { Link } from 'expo-router';
+import { CircleInfoIcon } from './Icons';
 
 export function Main() {
     const [characters, setCharacters] = useState({})
@@ -19,6 +21,13 @@ export function Main() {
             paddingTop: insets.top,
             paddingBottom: insets.bottom,
         }}>
+
+            <Link asChild href='/about'>
+                <Pressable>
+                    {({ pressed }) => <CircleInfoIcon style={{ opacity: pressed ? 0.5 : 1 }} />}
+                </Pressable>
+            </Link>
+
             {characters.results?.length == 0 ? (
                 <ActivityIndicator size='large' />
             ) : (
@@ -28,6 +37,7 @@ export function Main() {
                     renderItem={({ item, index }) => <AnimatedCharacterCard character={item} index={index} />}
                 />
             )}
+
         </View>
     );
 }
