@@ -1,16 +1,20 @@
 import { useEffect, useRef } from "react";
-import { Animated, Image, StyleSheet, Text, View } from "react-native"
+import { Animated, Image, Text, View } from "react-native"
+import { Status } from "./Status";
 
 export function CharacterCard({ character }) {
     return (
-        <View style={styles.card}>
+        <View className='flex-row gap-4 mb-5'>
             <Image
+                className='w-[100] h-[100] rounded-xl'
                 source={{ uri: character.image }}
-                style={styles.image}
             />
-            <Text style={styles.title}>{character.name}</Text>
-            <Text style={styles.description}>Specie: {character.species}</Text>
-            <Text style={styles.status}>Status: {character.status}</Text>
+            <View className='flex items-start'>
+                <Text className='text-2xl font-bold text-white'>{character.name}</Text>
+                <Text className='text-base text-white'>Specie: {character.species}</Text>
+
+                <Status status={character.status} />
+            </View>
         </View>
     )
 }
@@ -33,28 +37,3 @@ export function AnimatedCharacterCard({ character, index }) {
         </Animated.View>
     )
 }
-
-const styles = StyleSheet.create({
-    card: {
-        marginBottom: 48
-    },
-    image: {
-        width: 100,
-        height: 100,
-        borderRadius: 10
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 10,
-        color: '#fff'
-    },
-    description: {
-        fontSize: 16,
-        color: '#fff'
-    },
-    status: {
-        fontSize: 16,
-        color: '#ccc',
-    }
-});
