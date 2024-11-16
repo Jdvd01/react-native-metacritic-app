@@ -1,12 +1,13 @@
 {
   "expo": {
-    "name": "react-native-metacritic-app",
-    "slug": "react-native-metacritic-app",
+    "name": "react-native-tutorial-app",
+    "slug": "react-native-tutorial-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "tutorial",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
