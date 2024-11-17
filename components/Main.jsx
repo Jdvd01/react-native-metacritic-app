@@ -16,9 +16,10 @@ export function Main() {
     return (
         <Screen>
             <View className='mb-60'>
-
                 {characters.results?.length == 0 ? (
-                    <ActivityIndicator size='large' />
+                    <View className='items-center justify-center h-4/5'>
+                        <ActivityIndicator size='large' />
+                    </View>
                 ) : (
                     <FlatList
                         data={characters.results}

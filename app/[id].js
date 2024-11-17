@@ -27,7 +27,9 @@ export default function Detail() {
 
             <View>
                 {characterDetail == null ? (
-                    <ActivityIndicator color={'#fff'} size='large' />
+                    <View className='items-center justify-center h-4/5'>
+                        <ActivityIndicator size='large' />
+                    </View>
                 ) : (
                     <ScrollView>
                         <View className='justify-center items-center'>
