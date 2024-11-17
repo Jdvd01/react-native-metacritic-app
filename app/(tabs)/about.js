@@ -6,7 +6,7 @@ import Screen from "../../components/Screen";
 export default function About() {
     return (
         <Screen>
-            <ScrollView>
+            <ScrollView className='mb-60'>
                 <Link asChild href='/'>
                     <Pressable className='active:opacity-70'>
                         {({ pressed }) => <HomeIcon style={{ opacity: pressed ? 0.5 : 1 }} />}
