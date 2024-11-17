@@ -34,7 +34,7 @@ export default function Detail() {
                     <ScrollView>
                         <View className='justify-center items-center'>
                             <Image
-                                className='mb-4 rounded'
+                                className='mb-4 rounded-3xl'
                                 source={{ uri: characterDetail.image }}
                                 style={{ width: 250, height: 300 }}
                             />
