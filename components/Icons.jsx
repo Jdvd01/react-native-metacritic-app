@@ -13,6 +13,10 @@ export const InfoIcon = ({ color = 'black' }, props) => (
     <FontAwesome name="info" size={24} color={color} {...props} />
 )
 
+export const LinkedinIcon = ({ color = 'black' }, props) => (
+    <FontAwesome name="linkedin-square" size={30} color={color} {...props} />
+)
+
 export const Logo = ({ size = '24', color }, props) => {
     return (
         <Svg width={size} height={size} fill={color} viewBox="0 0 50 50" {...props}>
