@@ -1,46 +1,31 @@
-import { Link } from "expo-router";
-import { Pressable, ScrollView, Text } from "react-native";
-import { HomeIcon } from "../../components/Icons";
+import { Pressable, Text, View } from "react-native";
 import Screen from "../../components/Screen";
+import { Link } from "expo-router";
+import { LinkedinIcon } from "../../components/Icons";
 
 export default function About() {
     return (
         <Screen>
-            <ScrollView>
-                <Link asChild href='/'>
-                    <Pressable className='active:opacity-70'>
-                        {({ pressed }) => <HomeIcon style={{ opacity: pressed ? 0.5 : 1 }} />}
-                    </Pressable>
-                </Link>
-                <Text className='text-white font-bold mb-8 text-2xl'>About</Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            <View className='items-center justify-around flex-1 px-5'>
+                <Text className='text-white text-xl'>
+                    ¿Fan de <Text className='text-green-300'>Rick y Morty</Text>? ¡Esta app es para ti! Explora un universo de información sobre tus personajes favoritos. Con nuestra app, podrás conocer a fondo a Rick, Morty y compañía, desde sus características más peculiares hasta sus aventuras más descabelladas. ¡Todo al alcance de tu mano!
                 </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-                <Text className='text-white'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-            </ScrollView>
+
+                <View className='items-center'>
+                    <Text className='text-red-300 mb-2 text-2xl'>
+                        The app is still under development.
+                    </Text>
+
+                    <Link asChild href='https://www.linkedin.com/in/jdvd01/'>
+                        <Pressable className='active:opacity-70 p-1 flex-row items-end gap-x-2'>
+                            <LinkedinIcon color='cyan' />
+                            <Text className='text-cyan-300 text-2xl'>
+                                Contact with me
+                            </Text>
+                        </Pressable>
+                    </Link>
+                </View>
+            </View>
         </Screen>
     )
 }
