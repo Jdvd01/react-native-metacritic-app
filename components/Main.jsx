@@ -15,19 +15,17 @@ export function Main() {
 
     return (
         <Screen>
-            <View>
-                {characters.results?.length == 0 ? (
-                    <View className='items-center justify-center h-4/5'>
-                        <ActivityIndicator size='large' />
-                    </View>
-                ) : (
-                    <FlatList
-                        data={characters.results}
-                        keyExtractor={item => item.id}
-                        renderItem={({ item, index }) => <AnimatedCharacterCard character={item} index={index} />}
-                    />
-                )}
-            </View>
+            {characters.results?.length == 0 ? (
+                <View className='items-center justify-center h-4/5'>
+                    <ActivityIndicator size='large' />
+                </View>
+            ) : (
+                <FlatList
+                    data={characters.results}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item, index }) => <AnimatedCharacterCard character={item} index={index} />}
+                />
+            )}
         </Screen>
     );
 }
